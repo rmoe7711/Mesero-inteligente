@@ -1,0 +1,5 @@
+body{font-family: "verdana";}
+h1 {font-size: 18px;}
+.listado {width: 100%; border: none; }
+.listado td{border: none; line-height: 50px;}
+.listado th{border: none;}

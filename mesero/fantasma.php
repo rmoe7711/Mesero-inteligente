@@ -1,0 +1,12 @@
+<html>
+<head>
+
+</head>
+<body>
+
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js' type='text/javascript'/></script> <script> var Ghost=function(){var a={};if(jQuery.browser.msie){if(jQuery.browser.version<8){return a}}a.html='<div class="ghost"></div>';a.element=null;a.timer=null;a.interval=Math.floor(Math.random()*1e3)+1e3;a.directionX=Math.round(Math.random());a.directionY=Math.round(Math.random());if(a.directionX==0){a.directionX=-1}if(a.directionY==0){a.directionY=-1}a.screenWidth=null;a.screenHeight=null;a.elementWidth=150;a.elementHeight=145;a.init=function(){a.getBrowserSize();jQuery(window).resize(function(){a.getBrowserSize()});a.element=jQuery(a.html);a.timer=window.setInterval(a.move,a.interval);jQuery("body").append(a.element);a.move(true);a.move();return a};a.move=function(b){var c=Math.floor(Math.random()*100+100);var d=Math.floor(Math.random()*100+100);var e=a.element.offset().left;var f=a.element.offset().top;var g=e+a.directionX*c;var h=f+a.directionY*d;var i=a.screenWidth-a.elementWidth-20;var j=a.screenHeight-a.elementHeight;if(g>i){g=i;a.directionX=-a.directionX}else if(g<0){g=0;a.directionX=-a.directionX}if(h>j){h=j;a.directionY=-a.directionY}else if(h<0){h=0;a.directionY=-a.directionY}var k=Math.random()-.1;if(k<.4){k=.4}if(b){a.element.css("top",Math.floor(Math.random()*a.screenHeight-a.elementHeight));a.element.css("left",Math.floor(Math.random()*a.screenWidth-a.elementWidth))}else{a.element.removeClass("moving-left");a.element.removeClass("moving-right");if(g>e){a.element.addClass("moving-right")}else if(g<e){a.element.addClass("moving-left")}a.element.stop();a.element.animate({top:h,left:g,opacity:k},{duration:a.interval,easing:"swing"})}};a.getBrowserSize=function(){a.screenWidth=jQuery(document).width();a.screenHeight=jQuery(document).height()};a.init();return a} </script> <script>  jQuery(function(){  var Ghosts = new Array();  for (var i = 0; i < 3; i++) {  Ghosts.push(new Ghost());                 }             }) </script> <style> .ghost {     position: absolute;     width: 150px;     height: 145px;     z-index: 10001;     display: block;     opacity: 0.8;     background: transparent url('http://2.bp.blogspot.com/-timO_aG_TEY/UmsJXlNz5zI/AAAAAAAAK8Q/pcV38Lv7hRA/s1600/fantasma.png') no-repeat; } .ghost.moving-left {     -moz-transform: scaleX(-1);     -webkit-transform: scaleX(-1);     -o-transform: scaleX(-1);     transform: scaleX(-1);     filter: fliph; /*IE*/ } </style>
+
+
+</body>
+</html>
